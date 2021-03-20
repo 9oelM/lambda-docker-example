@@ -1,0 +1,14 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.72",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {}
+}

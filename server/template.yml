@@ -1,0 +1,36 @@
+########################################
+# DO NOT USE THIS TEMPLATE TO DEPLOY TO AWS!!!
+# ONLY USE IT FOR LOCAL TESTING
+########################################
+
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  hello api
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  VideoRoomFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      DockerTag: nodejs14.x-v1
+      DockerContext: ./packages/hello
+      Dockerfile: Dockerfile
+    Properties:
+      # will automatically use local one if testing on local
+      ImageUri: {your-aws-account-id}.dkr.ecr.{your-aws-region}.amazonaws.com/hello-in-eng
+      # Note: If the PackageType property is set to Image, then either ImageUri is required, 
+      # or you must or you must build your application with necessary Metadata entries in the AWS SAM template file. 
+      # For more information, see Building applications.
+      PackageType: Image
+      FunctionName: HelloInEngFunction
+      Events:
+        VideoRoom:
+          Type: Api
+          Properties:
+            Path: /hello-in-eng
+            Method: get

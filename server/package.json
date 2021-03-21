@@ -10,8 +10,7 @@
   "scripts": {
     "start": "concurrently \"npm run watch\" \"npm run api\"",
     "watch": "nodemon",
-    "api": "sam local start-api",
-    "docker:login": "aws ecr get-login-password --region {your-aws-region} | docker login --username AWS --password-stdin {your-aws-account}.dkr.ecr.{your-aws-region}.amazonaws.com"
+    "api": "sam local start-api"
   },
   "name": "server"
 }

@@ -14,12 +14,12 @@ Resources:
       DockerContext: ./packages/hello
       Dockerfile: Dockerfile
     Properties:
-      ImageUri: {your-aws-account-id}.dkr.ecr.{your-aws-region}.amazonaws.com/hello-in-eng
+      ImageUri: {your-aws-account-id}.dkr.ecr.{your-aws-region}.amazonaws.com/dev-hello
       PackageType: Image
       FunctionName: HelloInEngFunction
       Events:
         VideoRoom:
           Type: Api
           Properties:
-            Path: /hello-in-eng
+            Path: /hello
             Method: get

@@ -2,5 +2,5 @@
   "watch": ["packages"],
   "ext": "ts,json,js",
   "ignore": ["src/**/*.spec.ts", "./**/node_modules", "node_modules", ".aws-sam"],
-  "exec": "sam build --template-file ./template.yaml"
+  "exec": "sam build --template-file ./template.yml"
 }
